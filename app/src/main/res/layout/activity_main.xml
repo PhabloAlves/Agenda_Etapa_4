@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/design_default_color_primary"
+    android:orientation="vertical">
+
+    <!-- TextView para o título "Novo Compromisso" -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:fontFamily="@font/audiowide"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Novo Compromisso"
+        android:textAllCaps="false"
+        android:textColor="#210553"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:typeface="normal" />
+
+    <!-- Layout horizontal para os campos de data e hora -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Botão para a data -->
+        <Button
+            android:id="@+id/data"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/audiowide"
+            android:onClick="mostraDialogoDatePicker"
+            android:text="DATA" />
+
+        <!-- Botão para a hora -->
+        <Button
+            android:id="@+id/hora"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/audiowide"
+            android:onClick="mostraDialogoTimePicker"
+            android:text="HORA" />
+    </LinearLayout>
+
+    <!-- EditText para a descrição -->
+    <EditText
+        android:id="@+id/editTextDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/audiowide"
+        android:hint="Descrição"
+        android:inputType="textMultiLine"
+        android:padding="16dp"
+        android:textAlignment="center"
+        android:textColor="#210553"
+        android:textSize="18sp" />
+
+    <!-- Botão "OK" para submeter os dados -->
+    <Button
+        android:id="@+id/buttonOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        android:background="#000000"
+        android:backgroundTint="#000000"
+        android:fontFamily="@font/audiowide"
+        android:paddingStart="24dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="12dp"
+        android:text="OK"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <!-- Layout horizontal para os botões "HOJE" e "OUTRA DATA" -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Botão "HOJE" -->
+        <Button
+            android:id="@+id/data_hoje"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/audiowide"
+            android:text="HOJE" />
+
+        <!-- Botão "OUTRA DATA" -->
+        <Button
+            android:id="@+id/data_outra"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/audiowide"
+            android:onClick="mostraDialogoDatePicker"
+            android:text="OUTRA DATA" />
+    </LinearLayout>
+
+    <!-- FrameLayout para a área de visualização de compromissos -->
+    <FrameLayout
+        android:id="@+id/frameLayoutCompromissos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp">
+
+        <!-- ScrollView para tornar o conteúdo rolável -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Lista de compromissos -->
+                <TextView
+                    android:id="@+id/textViewCompromissos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#000000"
+                    android:padding="16dp"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:scrollbars="vertical"
+                    android:gravity="top" />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</LinearLayout>
